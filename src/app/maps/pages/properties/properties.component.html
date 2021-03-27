@@ -1,0 +1,33 @@
+<div class="row mt-3">
+    <div class="col-2"></div>
+    <div class="col">
+        <h1>List Properties</h1>
+        <hr>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col">
+
+            <div class="row">
+                <div class="col-md-4"
+                     *ngFor="let property of properties">
+
+                    <div class="card mb-3">
+                        <!-- Este app-minimap lo usamos como imagen al agregarle la clase card-img-top de bootstrap -->
+                        <app-minimap [lnglatMinimap]="property.lngLat" class="card-img-top"></app-minimap>
+                        <div class="card-body">
+                            <h5 class="card-title">{{property.title}}</h5>
+                            <p class="card-text">{{property.description}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

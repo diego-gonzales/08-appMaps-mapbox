@@ -1,0 +1,30 @@
+<div #myMap class="map-container"></div>
+
+<!-- A este div se le agregó estilos CSS ('clasecita-row') para que se pueda ver sobre el mapa -->
+<div class="row clasecita-row mx-5">
+    <div class="col-12">
+        <label for="form-label">
+            <strong>Zoom:</strong>{{zoomLevel | number:'2.0-2'}}<br>
+            <strong>Lng, Lat:</strong> [{{center[0] | number:'2.4-4'}}, {{center[1] | number:'2.4-4'}}]
+        </label>
+
+        <input type="range"
+               class="form-range"
+               [value]="zoomLevel"
+               min="0"
+               max="18"
+               (input)="changeValueInputRange(inputRange.value)"
+               #inputRange>
+    </div>
+
+    <div class="col-md-12">
+        <button class="btn btn-primary"
+                (click)="zoomOut()">
+                -
+        </button>
+        <button class="btn btn-primary float-end"
+                (click)=zoomIn()>
+            +
+        </button>
+    </div>
+</div>
